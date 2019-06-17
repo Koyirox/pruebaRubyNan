@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Todos</h1>
+
+<% @todos.each_slice(3) do |todos| %>
+<div class='row'>
+    <% todos.each do |todo| %>
+        <div class='card'style="width: 18rem;"> 
+        <%= image_tag todo.photo, class: 'card-img-top' %>
+            <div class="card-body">
+            <h5 class="card-title"><%= todo.title %></h5>
+            
+            
+            <%# <%= button_to 'Agregamos la wea', product_orders_path(todo), class: 'btn btn-primary' %> 
+         </div>
+         
+         <tr><%= link_to 'Detalle', todo %></tr>
+         <td><%= link_to 'Modificar', edit_todo_path(todo) %></td>
+        
+
+
+          
+        </div>
+    <% end %>
+
+    
+    
+</div>
+<% end %>
+
+
+
+<%# <%= link_to 'New Todo', new_todo_path %> 
+
+
